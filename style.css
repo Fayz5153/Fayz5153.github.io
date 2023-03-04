@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 390px;
+  margin: 0 auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  border: 1px solid black;
+  padding: 30px 10px 20px 10px;
+  position: relative;
+}
+
+.grid img {
+  width: 150px;
+}
+
+.item {
+  border: 1px solid red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.category__item {
+  cursor: pointer;
+}
+
+.maxsulot {
+  border: 1px solid green;
+  position: relative;
+}
+
+.maxsulot span {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.back_btn {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  height: 20px;
+  width: 50px;
+  font-size: 20px;
+  padding-bottom: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: red;
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
+}
+
+.back_btn:hover {
+  -webkit-box-shadow: 0 0 5px 1px #ff00009c, inset 0 0 5px 1px #ff00009c;
+          box-shadow: 0 0 5px 1px #ff00009c, inset 0 0 5px 1px #ff00009c;
+}
+
+.buy__div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.buy__div button {
+  width: 260px;
+  height: 40px;
+  cursor: pointer;
+}
