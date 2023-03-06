@@ -14,7 +14,7 @@ tg.expand();
 tg.MainButton.textColor = "#FFFFFF";
 tg.MainButton.color = "#2cab37";
 
-const BASE_URL = "http://146.190.31.231"
+const BASE_URL = "https://enfix.uz"
 
 let grid = document.querySelector("#grid")
 let buy = document.querySelector("#buy")
