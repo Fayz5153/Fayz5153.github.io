@@ -228,6 +228,12 @@ Telegram.WebApp.onEvent("mainButtonClicked", function(){
 	// tg.sendData(item);
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+  let tg = window.Telegram.WebApp;
+  console.log(tg)
+  // Use tg object here
+});
+
 let usercard = document.getElementById("usercard");
 let userInfo
 
