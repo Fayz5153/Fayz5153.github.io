@@ -240,6 +240,7 @@ console.log(tg.initDataUnsafe.user.first_name)
 if (tg.initDataUnsafe.user) {
   // Access properties of tg.initDataUnsafe.user safely
   const firstName = tg.initDataUnsafe.user.first_name;
+  console.log(firstName)
 } else {
   // Handle the case where tg.initDataUnsafe.user is undefined
   console.error("tg.initDataUnsafe.user is undefined");
