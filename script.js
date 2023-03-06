@@ -247,7 +247,7 @@ if (tg.initDataUnsafe.user) {
   console.error("tg.initDataUnsafe.user is undefined");
   userInfo = undefined; 
 }
-console.log(tg.initDataUnsafe.user)
+console.log(window.Telegram.WebApp.initDataUnsafe)
 console.log(tg)
 
 // let userInfo = `${tg.initDataUnsafe.user.first_name}
