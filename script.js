@@ -215,7 +215,11 @@ function buyProduct() {
         .then(response => {
           response.text(); 
           console.log(response.status)
-
+          if (response.status === 200) {
+            alert("buyurtma qabul qilinddi"+ products.product)
+          } else {
+            alert("Error: "+response.status)
+          }
         })
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
@@ -228,34 +232,34 @@ Telegram.WebApp.onEvent("mainButtonClicked", function(){
 	// tg.sendData(item);
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-  let tg = window.Telegram.WebApp;
-  console.log(tg)
-  // Use tg object here
-});
+// document.addEventListener('DOMContentLoaded', function() {
+//   let tg = window.Telegram.WebApp;
+//   console.log(tg)
+//   // Use tg object here
+// });
 
-let usercard = document.getElementById("usercard");
-let userInfo
+// let usercard = document.getElementById("usercard");
+// let userInfo
 
-if (tg.initDataUnsafe.user) {
-  // Access properties of tg.initDataUnsafe.user safely
-  const firstName = tg.initDataUnsafe.user.first_name;
-  console.log(firstName)
-  userInfo = firstName; 
-} else {
-  // Handle the case where tg.initDataUnsafe.user is undefined
-  console.error("tg.initDataUnsafe.user is undefined");
-  userInfo = undefined; 
-}
-console.log(window.Telegram.WebApp.initDataUnsafe)
-console.log(tg)
+// if (tg.initDataUnsafe.user) {
+//   // Access properties of tg.initDataUnsafe.user safely
+//   const firstName = tg.initDataUnsafe.user.first_name;
+//   console.log(firstName)
+//   userInfo = firstName; 
+// } else {
+//   // Handle the case where tg.initDataUnsafe.user is undefined
+//   console.error("tg.initDataUnsafe.user is undefined");
+//   userInfo = undefined; 
+// }
+// console.log(window.Telegram.WebApp.initDataUnsafe)
+// console.log(tg)
 
-// let userInfo = `${tg.initDataUnsafe.user.first_name}
-// ${tg.initDataUnsafe.user.last_name} ${tg.initDataUnsafe.user.id}`
+// // let userInfo = `${tg.initDataUnsafe.user.first_name}
+// // ${tg.initDataUnsafe.user.last_name} ${tg.initDataUnsafe.user.id}`
 
-usercard.innerHTML = userInfo; 
+// usercard.innerHTML = userInfo; 
 
-// console.log(tg.initDataUnsafe.user.first_name)
+// // console.log(tg.initDataUnsafe.user.first_name)
 
 
 
