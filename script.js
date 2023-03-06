@@ -238,26 +238,28 @@ Telegram.WebApp.onEvent("mainButtonClicked", function(){
 //   // Use tg object here
 // });
 
-// let usercard = document.getElementById("usercard");
-// let userInfo
+let usercard = document.getElementById("usercard");
+let userInfo
 
-// if (tg.initDataUnsafe.user) {
-//   // Access properties of tg.initDataUnsafe.user safely
-//   const firstName = tg.initDataUnsafe.user.first_name;
-//   console.log(firstName)
-//   userInfo = firstName; 
-// } else {
-//   // Handle the case where tg.initDataUnsafe.user is undefined
-//   console.error("tg.initDataUnsafe.user is undefined");
-//   userInfo = undefined; 
-// }
+if (tg.initDataUnsafe.user) {
+  // Access properties of tg.initDataUnsafe.user safely
+  const firstName = tg.initDataUnsafe.user.first_name;
+  const last_name = tg.initDataUnsafe.user.last_name;
+  const id = tg.initDataUnsafe.user.id;
+  console.log(firstName)
+  userInfo = firstName+" "+last_name+" "+id; 
+} else {
+  // Handle the case where tg.initDataUnsafe.user is undefined
+  console.error("tg.initDataUnsafe.user is undefined");
+  userInfo = undefined; 
+}
 // console.log(window.Telegram.WebApp.initDataUnsafe)
 // console.log(tg)
 
 // // let userInfo = `${tg.initDataUnsafe.user.first_name}
 // // ${tg.initDataUnsafe.user.last_name} ${tg.initDataUnsafe.user.id}`
 
-// usercard.innerHTML = userInfo; 
+usercard.innerHTML = userInfo; 
 
 // // console.log(tg.initDataUnsafe.user.first_name)
 
