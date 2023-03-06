@@ -242,6 +242,7 @@ if (tg.initDataUnsafe.user) {
   userInfo = undefined; 
 }
 console.log(tg.initDataUnsafe.user)
+console.log(tg)
 
 // let userInfo = `${tg.initDataUnsafe.user.first_name}
 // ${tg.initDataUnsafe.user.last_name} ${tg.initDataUnsafe.user.id}`
