@@ -6,7 +6,6 @@
 //   {id: 5,img:"./hotdog.png", title:"Hot-Dog5", price:"10000"},
 //   {id: 6,img:"./hotdog.png", title:"Hot-Dog6", price:"10000"},
 // ]
-import sweetalert2 from 'https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/+esm'
 
 let tg = window.Telegram.WebApp;
 
@@ -15,7 +14,7 @@ tg.expand();
 tg.MainButton.textColor = "#FFFFFF";
 tg.MainButton.color = "#2cab37";
 
-const BASE_URL = "http://127.0.0.1:8001"
+const BASE_URL = "http://146.190.31.231"
 
 let grid = document.querySelector("#grid")
 let buy = document.querySelector("#buy")
