@@ -20,15 +20,102 @@
         setThemeClass();
     </script>
   </head>
-  <body>
-    <div class="container">
+  <body class="" style="visibility: hidden;">
+    <!-- <div class="container">
       <div class="grid" id="grid"></div>
       <div class="buy__div" id="buy"></div>
       <h2 id="usercard">userInfo</h2>
       <div class="succes__icon"></div>
       <pre><code id="webview_data"></code></pre>
       <span id="webview_data_status" class="status_need">Checking hash...</span>
+    </div> -->
+    
+  <section id="top_sect" class="second">
+    <button id="main_btn" onclick="DemoApp.sendMessage('');">Send «Hello, World!»</button>
+    <button id="with_webview_btn" onclick="DemoApp.sendMessage('', true);">Send «Hello, World!» with inline webview button</button>
+    <button id="data_btn" onclick="DemoApp.sendTime(true);">Send current time to bot (x10)</button>
+    <button onclick="DemoApp.expand();">Expand Webview</button>
+    <button onclick="DemoApp.toggleMainButton(this);">Hide Main Button</button>
+    <input type="text" placeholder="Input text in regular input..." id="regular_field" />
+    <div
+        class="input"
+        contenteditable="true"
+        data-placeholder="Input text in contenteditable field..."
+        id="text_field"
+    ></div>
+    <div id="peer_wrap" style="display:none">
+        <img id="peer_photo" class="chat_img" src="">
+        <span id="peer_name"></span>
     </div>
+    <div class="sect_row">Header: <select id="header_color_sel">
+        <option value="bg_color" selected>bg_color</option>
+        <option value="secondary_bg_color">secondary_bg_color</option>
+    </select></div>
+    <div class="sect_row">Background: <input type="color" id="bg_color_input" /> <select id="bg_color_sel">
+        <option value="bg_color" selected>bg_color</option>
+        <option value="secondary_bg_color">secondary_bg_color</option>
+        <option value="custom" id="bg_color_val">custom...</option>
+    </select></div>
+  </section>
+  <section>
+    <div id="btn_status" class="hint" style="display: none;">
+    </div>
+    <p>Test links:</p>
+    <ul>
+        <li><a id="regular_link" href="">Regular link #2</a> (opens inside webview)</li>
+        <li><a href="https://telegram.org/" target="_blank">target="_blank" link</a> (opens outside webview)</li>
+        <li><a href="javascript:window.open('https://telegram.org/');">window.open() link</a> (opens outside webview)</li>
+        <li><a href="https://t.me/like">LikeBot t.me link</a> (opens inside Telegram app)</li>
+        <li><a href="javascript:Telegram.WebApp.openTelegramLink('https://t.me/vote');">web_app_open_tg_link()</a> (opens inside Telegram app)</li>
+        <li><a href="javascript:Telegram.WebApp.openLink('https://google.com/');">web_app_open_link()</a> (opens outside webview)</li>
+        <li><a href="tg://resolve?domain=vote">VoteBot tg:// link</a> (does not open)</li>
+        <li><a href="javascript:Telegram.WebApp.openLink('https://telegra.ph/api',{try_instant_view:true});">web_app_open_link({try_instant_view:true})</a> (opens IV inside Telegram app)</li>
+    </ul>
+    <p>Test permissions:</p>
+    <ul>
+        <li><a href="javascript:;" onclick="return DemoApp.requestLocation(this);">Request Location</a> <span></span></li>
+        <li><a href="javascript:;" onclick="return DemoApp.requestVideo(this);">Request Video</a> <span></span></li>
+        <li><a href="javascript:;" onclick="return DemoApp.requestAudio(this);">Request Audio</a> <span></span></li>
+        <li><a href="javascript:;" onclick="return DemoApp.requestAudioVideo(this);">Request Audio+Video</a> <span></span></li>
+        <li><a href="javascript:;" onclick="return DemoApp.testClipboard(this);" id="clipboard_test">Read from clipboard</a> <span></span></li>
+    </ul>
+    <p>Test alerts:</p>
+    <div class="columns">
+        <ul>
+            <li><a href="javascript:;" onclick="alert('Hello!');">alert</a></li>
+            <li><a href="javascript:;" onclick="confirm('Are you sure?');">confirm</a></li>
+            <li><a href="javascript:;" onclick="prompt('How old are you?');">prompt</a></li>
+        </ul>
+        <ul>
+            <li><a href="javascript:;" onclick="DemoApp.showAlert('Hello!');">showAlert</a></li>
+            <li><a href="javascript:;" onclick="DemoApp.showConfirm('Are you sure?');">showConfirm</a></li>
+            <li><a href="javascript:;" onclick="DemoApp.showPopup();">showPopup</a></li>
+            <li><a href="javascript:;" onclick="DemoApp.showScanQrPopup();">showScanQrPopup</a></li>
+            <li><a href="javascript:;" onclick="DemoApp.showScanQrPopup(true);">showScanQrPopup (links only)</a></li>
+        </ul>
+    </div>
+    <p>Haptics:</p>
+    <ul>
+        <li>Impact: <a href="javascript:Telegram.WebApp.HapticFeedback.impactOccurred('heavy');">heavy</a>, &nbsp; <a href="javascript:Telegram.WebApp.HapticFeedback.impactOccurred('light');">light</a>, &nbsp; <a href="javascript:Telegram.WebApp.HapticFeedback.impactOccurred('medium');">medium</a>, &nbsp; <a href="javascript:Telegram.WebApp.HapticFeedback.impactOccurred('rigid');">rigid</a>, &nbsp; <a href="javascript:Telegram.WebApp.HapticFeedback.impactOccurred('soft');">soft</a><br><br></li>
+        <li>Notification: <a href="javascript:Telegram.WebApp.HapticFeedback.notificationOccurred('error');">error</a>, &nbsp; <a href="javascript:Telegram.WebApp.HapticFeedback.notificationOccurred('success');">success</a>, &nbsp; <a href="javascript:Telegram.WebApp.HapticFeedback.notificationOccurred('warning');">warning</a><br><br></li>
+        <li>Selection: <a href="javascript:Telegram.WebApp.HapticFeedback.selectionChanged();">changed</a><br><br></li>
+    </ul>
+    <pre><code id="webview_data"></code></pre>
+    <div class="hint">
+        Data passed to webview.
+        <span id="webview_data_status" class="status_need">Checking hash...</span>
+    </div>
+    <pre><code id="theme_data"></code></pre>
+    <div class="hint">
+        Theme params
+    </div>
+    <div class="hint">
+        Version: <span id="ver"></span>,
+        platform: <span id="platform"></span>
+    </div>
+  </section>
+  <div class="viewport-border"></div>
+  <div class="viewport-stable_border"></div>
 
     <!-- <script src="./script.js"></script> -->
     <script type="application/javascript">
