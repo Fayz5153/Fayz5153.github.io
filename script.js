@@ -237,6 +237,8 @@ usercard.innerHTML = userInfo;
 
 console.log(tg.initDataUnsafe.user.first_name)
 
+console.log(tg.initDataUnsafe.user)
+
 if (tg.initDataUnsafe.user) {
   // Access properties of tg.initDataUnsafe.user safely
   const firstName = tg.initDataUnsafe.user.first_name;
