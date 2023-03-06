@@ -77,6 +77,11 @@
         }
       };
 
+    </script>
+    <script type="application/javascript">
+
+      document.getElementById('webview_data').innerHTML = JSON.stringify(DemoApp.initDataUnsafe, null, 2);
+
       DemoApp.checkInitData();
       DemoApp.init();
     </script>
