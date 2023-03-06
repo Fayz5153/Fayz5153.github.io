@@ -230,10 +230,17 @@ Telegram.WebApp.onEvent("mainButtonClicked", function(){
 
 let usercard = document.getElementById("usercard");
 
-let p = document.createElement("p");
+let userInfo = `${tg.initDataUnsafe.user.first_name}
+${tg.initDataUnsafe.user.last_name} ${tg.initDataUnsafe.user.id}`
 
-p.innerText = `${tg.initDataUnsafe.user.first_name}
-${tg.initDataUnsafe.user.last_name} ${tg.initDataUnsafe.user.id}`;
+usercard.innerHTML = userInfo; 
 
+console.log(tg.initDataUnsafe.user.first_name)
 
-usercard.appendChild(p); 
+if (tg.initDataUnsafe.user) {
+  // Access properties of tg.initDataUnsafe.user safely
+  const firstName = tg.initDataUnsafe.user.first_name;
+} else {
+  // Handle the case where tg.initDataUnsafe.user is undefined
+  console.error("tg.initDataUnsafe.user is undefined");
+}
