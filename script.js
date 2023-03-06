@@ -186,7 +186,7 @@ function buyProduct() {
       let products = {
         product:[],
         // user:[{user_id: tg.initDataUnsafe.user.id}]
-        user: Number(2144836360)
+        user: tg.initDataUnsafe.user.id
       }
       for(let [key, value] of Object.entries(count)){
         products.product.push({
