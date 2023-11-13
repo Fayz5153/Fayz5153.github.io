@@ -246,7 +246,7 @@ if (tg.initDataUnsafe.user) {
   const firstName = tg.initDataUnsafe.user.first_name;
   const last_name = tg.initDataUnsafe.user.last_name;
   const id = tg.initDataUnsafe.user.id;
-  console.log(tg.initDataUnsafe)
+  console.log(tg)
   userInfo = firstName+" "+last_name+" "+id; 
 } else {
   // Handle the case where tg.initDataUnsafe.user is undefined
